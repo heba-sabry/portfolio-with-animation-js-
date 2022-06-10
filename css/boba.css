@@ -98,6 +98,12 @@ ul {
     }
 }
 
+.header .container .nav>li:hover .mega-menu {
+    opacity: 1;
+    z-index: 100;
+    top: calc(100% + 1px);
+}
+
 .header .container .nav>li>a {
     display: flex;
     align-items: center;
@@ -137,6 +143,99 @@ ul {
 
 .header .container .nav>li>a:hover::before {
     left: 0;
+}
+
+.header .mega-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    padding: 30px;
+    background-color: white;
+    border-bottom: 3px solid var(--main-color);
+    z-index: 100;
+    gap: 40px;
+    transition: top var(--main-transition), opacity var(--main-transition);
+    top: calc(100% + 40px);
+    z-index: -1;
+    opacity: 0;
+
+}
+
+@media (max-width:767px) {
+    .header .mega-menu {
+        display: grid;
+        gap: 0;
+        padding: 5px;
+    }
+}
+
+.header .mega-menu .image img {
+    max-width: 100%;
+}
+
+@media(max-width:991px) {
+    .header .mega-menu .image img {
+        display: none;
+    }
+}
+
+
+.header .mega-menu .links {
+    padding: 20px;
+    min-width: 260px;
+    flex: 1;
+}
+
+@media (max-width:767px) {
+    .header .mega-menu .links {
+        padding: 0px;
+    }
+}
+
+
+.header .mega-menu .links li {
+    position: relative;
+}
+
+.header .mega-menu .links li:not(:last-child) {
+    border-bottom: 1px solid #e9e6e6;
+}
+
+@media (max-width:767px) {
+    .header .mega-menu .links:first-of-type li:last-child {
+        border-bottom: 1px solid #e9e6e6;
+    }
+}
+
+.header .mega-menu .links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color-Befor);
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.header .mega-menu .links li:hover::before {
+    content: "";
+    width: 100%;
+}
+
+
+.header .mega-menu .links li a {
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    display: block;
+}
+
+.header .mega-menu .links li a i {
+    margin-right: 10px;
 }
 
 /* end header */
