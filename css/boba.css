@@ -574,7 +574,7 @@ ul {
     border-style: solid;
     transition: var(--main-transition);
     right: 0px;
-    bottom: 0;
+    bottom: -1px;
 }
 
 .features .container .box:hover .images::after {
@@ -702,6 +702,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 50PX;
+    margin-top: 130px;
 }
 
 .Testimonials .container .box {
@@ -742,6 +743,289 @@ ul {
     line-height: 1.5;
     margin: 10px 0 0;
 }
+
+/* start team */
+.team {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50PX;
+}
+
+.team .container .box {
+    position: relative;
+}
+
+.team .container .box::before,
+.team .container .box:after {
+    content: "";
+    position: absolute;
+    background-color: #f3f3f3;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+.team .container .box::before {
+    z-index: -2;
+    width: calc(100% - 60px);
+}
+
+.team .container .box:after {
+    width: 0;
+    z-index: -1;
+    background-color: #e4e4e4;
+}
+
+.team .container .box:hover::after {
+    width: calc(100% - 60px);
+
+}
+
+.team .container .box .data {
+    display: flex;
+    padding-top: 60px;
+    align-items: center;
+}
+
+.team .container .box .data img {
+    width: calc(100% - 60px);
+    transition: var(--main-transition);
+    border-radius: 10px;
+}
+
+.team .container .box:hover .data img {
+    filter: grayscale(100%);
+}
+
+.team .container .box .data .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    gap: 20px;
+}
+
+.team .container .box .data .social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.team .container .box .data .social a:hover i {
+    color: var(--main-color);
+
+}
+
+.team .container .box .data .social a i {
+    color: #777;
+    transition: var(--main-transition);
+}
+
+.team .container .box .info {
+    padding-left: 80px
+}
+
+.team .container .box .info h3 {
+    color: var(--main-color);
+    transition: var(--main-transition);
+    margin-bottom: 0;
+    font-size: 22px;
+}
+
+.team .container .box:hover .info h3 {
+    color: #777;
+}
+
+.team .container .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+}
+
+@media (max-width:767px) {
+    .team .container .box::before {
+        width: 100%;
+    }
+
+    .team .container .box .data .social a {
+        font-size: unset;
+
+    }
+
+    .team .container .box .data img {
+        margin-left: 30px;
+        border-radius: 10px;
+    }
+
+    .team .container .box .info {
+        padding: 0;
+        text-align: center;
+    }
+}
+
+/* end team */
+/* start services */
+.services {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--main-color-Befor);
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50PX;
+}
+
+.services .container .box {
+    counter-increment: namb;
+    background-color: white;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    position: relative;
+    transition: var(--main-transition);
+}
+
+.services .container .box:hover {
+    transform: translateY(-10px);
+
+}
+
+.services .container .box::before {
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    /* للتوسيط */
+    height: 3px;
+    top: -3px;
+    background-color: var(--main-color);
+    position: absolute;
+    width: 0;
+    transition: var(--main-transition);
+
+}
+
+.services .container .box:hover::before {
+    width: 100%;
+}
+
+.services .container .box i {
+    text-align: center;
+    display: block;
+    margin: 30px 0 20px;
+    color: #cbc4c4;
+    font-size: 60px;
+}
+
+.services .container .box h3 {
+    text-align: center;
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 25px;
+    margin: 25px 0 30px;
+}
+
+.services .container .box .info {
+    background-color: #f0eeee;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+
+}
+
+.services .container .box .info::before {
+    content: "0" counter(namb);
+    color: white;
+    padding: 10px 0 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.services .container .box .info::after {
+    content: "";
+    background-color: var(--main-color);
+    width: 100px;
+    height: 54px;
+    top: 0px;
+    left: -15px;
+    position: absolute;
+    transform: skewX(-30deg);
+    border-right: 50px solid #cbc4c4;
+}
+
+.services .container .box .info a {
+    margin: auto 10px;
+    color: var(--main-color);
+
+}
+
+/* end services */
+/* start our skills */
+.our-skills {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: white;
+}
+
+.our-skills .container {
+    display: flex;
+    text-align: center;
+    /* gap: 0 100px; */
+
+
+}
+
+@media (max-width: 991px) {
+    .our-skills img {
+        display: none;
+    }
+}
+
+.our-skills .container .skills {
+    flex: 1;
+}
+.our-skills .container .skills .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-skills .container .skills .skill h3 span {
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.our-skills .container .skills .skill .the-progress {
+    height: 30px;
+    background-color: #eee;
+    position: relative;
+}
+
+.our-skills .container .skills .skill .the-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+/* end our skills */
 
 /* start animation */
 @keyframes up-and-down {
