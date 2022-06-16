@@ -982,8 +982,6 @@ ul {
 .our-skills .container {
     display: flex;
     text-align: center;
-    /* gap: 0 100px; */
-
 
 }
 
@@ -996,6 +994,7 @@ ul {
 .our-skills .container .skills {
     flex: 1;
 }
+
 .our-skills .container .skills .skill h3 {
     display: flex;
     justify-content: space-between;
@@ -1026,7 +1025,100 @@ ul {
 }
 
 /* end our skills */
+/* start work */
+.work {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--main-color-Befor);
+}
 
+.work .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width:991px) {
+    .work .container {
+        flex-direction: column;
+    }
+}
+
+.work .container .image {
+    max-width: 100%;
+    margin-right: 100px;
+}
+
+@media (max-width:991px) {
+    .work .container .image {
+        margin: 0 0 50px;
+    }
+}
+
+.work .container .info .box {
+    background-color: #f5f5f5;
+    padding: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+}
+
+@media (max-width:991px) {
+    .work .container .info .box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.work .container .info .box::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: #ededed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.work .container .info .box:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.work .container .info .box img {
+    width: 60px;
+    margin-right: 30px;
+}
+
+@media (max-width:991px) {
+    .work .container .info .box img {
+        margin: 0 0 30px;
+    }
+}
+
+.work .container .info .box .text h3 {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+}
+
+.work .container .info .box .text p {
+    color: #666;
+    line-height: 1.7;
+    margin: 10px 0 0px;
+    font-size: 18px;
+}
+
+/* end work */
 /* start animation */
 @keyframes up-and-down {
 
