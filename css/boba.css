@@ -1064,6 +1064,11 @@ ul {
     top: 0;
     height: 100%;
     background-color: var(--main-color);
+    transition:width 0.5s linear ;
+    -webkit-transition:width 0.5s linear ;
+    -moz-transition:width 0.5s linear ;
+    -ms-transition:width 0.5s linear ;
+    -o-transition:width 0.5s linear ;
 }
 
 /* end our skills */
@@ -1211,11 +1216,15 @@ ul {
 .events .container .info .time .unit span {
     display: block;
     transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
 }
 
 .events .container .info .time .unit span:first-child {
     font-size: 35px;
-    padding: 15px;
+    padding: 5px;
     color: var(--main-color);
     font-weight: bold;
 }
@@ -1620,7 +1629,8 @@ ul {
     font-weight: bold;
     font-size: 45px;
     margin-bottom: 10px;
-
+    transition: numb 0.5s linear;
+    scroll-behavior: smooth;
 }
 
 .stats .container .box span:last-child {
@@ -1918,7 +1928,29 @@ ul {
 
 
 /* end discount */
+.up {
+    z-index: 9999;
+    position: fixed;
+    background: var(--main-color);
+    color: white;
+    right: 25px;
+    padding: 10px 10px 0px 10px;
+    font-weight: bold;
+    BOTTOM: 25PX;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    font-size: 30px;
+    transition: dis var(--main-transition) linear;
+    -webkit-transition: dis var(--main-transition) linear;
+    -moz-transition: dis var(--main-transition) linear;
+    -ms-transition: dis var(--main-transition) linear;
+    -o-transition: dis var(--main-transition) linear;
+}
+.up:hover{
+background: var(--main-color-alt);
 
+}
 /* start animation */
 @keyframes up-and-down {
 
